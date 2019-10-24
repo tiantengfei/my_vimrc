@@ -47,6 +47,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'python-mode/python-mode'
+Plugin 'ericcurtin/CurtineIncSw.vim'
+map <C-h> :call CurtineIncSw()<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
