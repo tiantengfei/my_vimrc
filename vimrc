@@ -48,6 +48,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'python-mode/python-mode'
+"let g:pymode_python = 'python3'
+"key mapping for python-mode
+let g:pymode_rope_organize_imports_bind = '<leader>mo'
 Plugin 'ericcurtin/CurtineIncSw.vim'
 map <C-h> :call CurtineIncSw()<CR>
 set statusline+=%#warningmsg#
@@ -104,7 +107,9 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
+" 
 
+Plugin 'ianding1/leetcode.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -142,3 +147,8 @@ autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 nmap <C-n> :NERDTreeToggle<CR>
+" leetcode.vim
+nnoremap <leader>ll :LeetCodeList<cr>
+nnoremap <leader>lt :LeetCodeTest<cr>
+nnoremap <leader>ls :LeetCodeSubmit<cr>
+nnoremap <leader>li :LeetCodeSignIn<cr>
