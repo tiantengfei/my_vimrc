@@ -71,6 +71,7 @@ Plugin 'davidhalter/jedi-vim'
 " (The latter must be installed before it can be used.)
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
+Plugin 'rhysd/git-messenger.vim'
 " Also add Glaive, which is used to configure codefmt's maktaba flags. See
 " `:help :Glaive` for usage.
 Plugin 'google/vim-glaive'
@@ -110,6 +111,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " 
 
 Plugin 'ianding1/leetcode.vim'
+let g:leetcode_username = "tengfeimoon@gmail.com"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
