@@ -9,7 +9,9 @@ set autoindent
 set smartindent
 " 缩进
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=2
+"highlight PMenu ctermfg=95 ctermbg=215 guifg=black guibg=blue
+"highlight PMenuSel ctermfg=215 ctermbg=95 guifg=blue guibg=black
 filetype off                  " required
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
@@ -30,7 +32,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'https://github.com/vim-scripts/a.vim.git'
-"Plugin 'lyuts/vim-rtags'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
 Plugin 'taglist.vim'
@@ -46,7 +47,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'python-mode/python-mode'
 "let g:pymode_python = 'python3'
 "key mapping for python-mode
@@ -65,7 +66,7 @@ set statusline+=%*
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 Plugin 'cjrh/vim-conda'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 " plugin for google format
 " Add maktaba and codefmt to the runtimepath.
 " (The latter must be installed before it can be used.)
@@ -83,8 +84,8 @@ augroup autoformat_settings
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType python AutoFormatBuffer yapf
-  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  "autocmd FileType python AutoFormatBuffer yapf
+  autocmd FileType python AutoFormatBuffer autopep8
   autocmd FileType vue AutoFormatBuffer prettier
 augroup END
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -113,6 +114,11 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'ianding1/leetcode.vim'
 let g:leetcode_username = "tengfeimoon@gmail.com"
 " All of your Plugins must be added before the following line
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Shougo/echodoc.vim'
+" To use echodoc, you must increase 'cmdheight' value.
+set cmdheight=2
+let g:echodoc_enable_at_startup = 1
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -126,10 +132,9 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
-
-"let g:ycm_path_to_python_interpreter="/usr/bin/python"
+"let g:ycm_path_to_python_interpreter="/Users/tiantengfei/anaconda3/envs/tensorflow/bin/python"
 let g:ycm_error_symbol = '!'
 let g:ycm_warning_symbol = '?'
 let g:cpp_class_scope_highlight = 1
