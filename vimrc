@@ -8,7 +8,7 @@ set autoindent
 " 智能自动对齐
 set smartindent
 " 缩进
-set tabstop=4
+set tabstop=2
 set shiftwidth=2
 "highlight PMenu ctermfg=95 ctermbg=215 guifg=black guibg=blue
 "highlight PMenuSel ctermfg=215 ctermbg=95 guifg=blue guibg=black
@@ -85,9 +85,11 @@ augroup autoformat_settings
   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   "autocmd FileType python AutoFormatBuffer yapf
-  autocmd FileType python AutoFormatBuffer autopep8
+  "autocmd FileType python AutoFormatBuffer autopep8
+  autocmd FileType python AutoFormatBuffer pylint
   autocmd FileType vue AutoFormatBuffer prettier
 augroup END
+Plugin 'google/styleguide'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 " ...
@@ -132,7 +134,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-" let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 "let g:ycm_path_to_python_interpreter="/Users/tiantengfei/anaconda3/envs/tensorflow/bin/python"
 let g:ycm_error_symbol = '!'
