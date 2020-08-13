@@ -45,6 +45,8 @@ Plugin 'lyuts/vim-rtags'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-scripts/ZoomWin'
+nnoremap <silent> <C-w>z :ZoomWin<CR>
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 "Plugin 'vim-syntastic/syntastic'
@@ -78,15 +80,15 @@ Plugin 'rhysd/git-messenger.vim'
 Plugin 'google/vim-glaive'
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  " autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   autocmd FileType gn AutoFormatBuffer gn
   autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
   autocmd FileType java AutoFormatBuffer google-java-format
   "autocmd FileType python AutoFormatBuffer yapf
-  "autocmd FileType python AutoFormatBuffer autopep8
-  autocmd FileType python AutoFormatBuffer pylint
+  autocmd FileType python AutoFormatBuffer autopep8
+  "autocmd FileType python AutoFormatBuffer pylint
   autocmd FileType vue AutoFormatBuffer prettier
 augroup END
 Plugin 'google/styleguide'
@@ -144,6 +146,8 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+let g:leetcode_browser = 'chrome'
+let g:leetcode_china = 1
 set tabstop=4 softtabstop=4
 " 按F8按钮，在窗口的左侧出现taglist的窗口,像vc的左侧的workpace
 nnoremap <silent> <F8> :TlistToggle<CR><CR>
